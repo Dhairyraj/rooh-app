@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /play/
+
+Sitemap: https://rooh.com/sitemap.xml
