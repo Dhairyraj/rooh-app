@@ -40,8 +40,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-serif text-2xl md:text-3xl font-semibold text-gold-200 tracking-wide transition-colors group-hover:text-gold-100">
+          <Link to="/" className="flex items-center gap-2 group shrink-0">
+            <span className="font-serif text-2xl md:text-3xl font-semibold text-gold-200 tracking-wide transition-colors group-hover:text-gold-100 truncate">
               Rooh
             </span>
           </Link>
@@ -68,7 +68,7 @@ export const Navbar = () => {
             </div>
             
             <button
-              className="md:hidden text-gold-100 p-2"
+              className="md:hidden text-gold-100 p-3 min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -92,7 +92,8 @@ export const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className="text-lg font-medium text-gold-100/90 hover:text-gold-200"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-medium text-gold-100/90 hover:text-gold-200 py-2"
                 >
                   {link.name}
                 </Link>

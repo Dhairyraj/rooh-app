@@ -39,7 +39,7 @@ export const Eternal = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="The crown jewel of Rooh. A deeply cinematic, premium digital memory website." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-plum-950 text-gold-50 overflow-hidden font-serif selection:bg-gold-500/30 selection:text-gold-200">
+      <div className="relative min-h-screen bg-plum-950 text-gold-50 overflow-x-hidden font-serif selection:bg-gold-500/30 selection:text-gold-200">
         
         {/* Deep Plum & Gold Ambient Background */}
         <div className="fixed inset-0 pointer-events-none z-0">

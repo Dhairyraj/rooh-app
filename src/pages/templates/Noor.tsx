@@ -31,7 +31,7 @@ export const Noor = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="A beautiful everyday love template." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-[#FFFBF5] text-[#8C4A32] overflow-hidden">
+      <div className="relative min-h-screen bg-[#FFFBF5] text-[#8C4A32] overflow-x-hidden">
         
         {/* Floating Petals / Warm Light Animation */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">

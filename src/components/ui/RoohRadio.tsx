@@ -125,14 +125,14 @@ export const RoohRadio = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-[110px] md:bottom-6 right-4 md:right-6 z-[90] flex flex-col items-end gap-2">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="absolute bottom-16 left-0 bg-plum-900/95 backdrop-blur-md border border-plum-700 p-4 rounded-2xl shadow-2xl w-64 mb-2"
+            className="absolute bottom-full right-0 bg-plum-900/95 backdrop-blur-md border border-plum-700 p-4 rounded-2xl shadow-2xl w-56 mb-4"
           >
             <div className="flex justify-between items-center mb-4">
               <span className="text-sm font-medium text-gold-200 uppercase tracking-widest flex items-center">
@@ -162,26 +162,28 @@ export const RoohRadio = () => {
         )}
       </AnimatePresence>
 
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-12 h-12 bg-plum-800/80 backdrop-blur-md border border-gold-500/30 rounded-full flex items-center justify-center text-gold-200 hover:bg-plum-700 hover:text-gold-100 shadow-xl transition-all"
-      >
-        <Music className="w-5 h-5" />
-      </button>
+      <div className="flex flex-row-reverse items-center gap-2">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-10 h-10 md:w-12 md:h-12 bg-plum-800/80 backdrop-blur-md border border-gold-500/30 rounded-full flex items-center justify-center text-gold-200 hover:bg-plum-700 hover:text-gold-100 shadow-xl transition-all"
+        >
+          <Music className="w-4 h-4 md:w-5 md:h-5" />
+        </button>
 
-      <button
-        onClick={togglePlay}
-        className="absolute bottom-0 left-14 w-12 h-12 bg-gold-500 text-plum-950 rounded-full flex items-center justify-center hover:bg-gold-400 shadow-xl transition-all"
-      >
-        {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-1" />}
-      </button>
+        <button
+          onClick={togglePlay}
+          className="w-10 h-10 md:w-12 md:h-12 bg-gold-500 text-plum-950 rounded-full flex items-center justify-center hover:bg-gold-400 shadow-xl transition-all"
+        >
+          {isPlaying ? <Pause className="w-4 h-4 md:w-5 md:h-5 fill-current" /> : <Play className="w-4 h-4 md:w-5 md:h-5 fill-current ml-1" />}
+        </button>
+      </div>
       
       {/* Visualizer dots when playing */}
       <AnimatePresence>
         {isPlaying && (
           <motion.div 
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="absolute bottom-4 left-32 flex gap-1 items-end h-4"
+            className="absolute bottom-14 right-2 flex gap-1 items-end h-4"
           >
             {[1, 2, 3, 4].map((i) => (
               <motion.div

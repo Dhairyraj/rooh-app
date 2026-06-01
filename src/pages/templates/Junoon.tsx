@@ -36,7 +36,7 @@ export const Junoon = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="A cinematic, intense template for grand gestures and confessions." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-black text-[#E5E5E5] overflow-hidden font-sans">
+      <div className="relative min-h-screen bg-black text-[#E5E5E5] overflow-x-hidden font-sans">
         
         {/* Sparks Animation */}
         <div className="absolute inset-0 pointer-events-none z-0">

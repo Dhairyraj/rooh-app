@@ -100,7 +100,7 @@ export const ThirtySixQuestions = () => {
             animate="center"
             exit="exit"
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`absolute inset-0 bg-plum-800 rounded-2xl border border-plum-700 shadow-2xl flex flex-col items-center justify-center p-8 text-center overflow-hidden ${isPaywall ? 'blur-[8px]' : ''}`}
+            className={`absolute inset-0 bg-plum-800 rounded-2xl border border-plum-700 shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 text-center overflow-hidden ${isPaywall ? 'blur-[8px]' : ''}`}
           >
             <span className="text-gold-400/50 font-serif text-6xl absolute top-8 left-8 opacity-20">"</span>
             <h2 className="text-2xl md:text-3xl font-serif text-gold-50 leading-relaxed z-10">
@@ -120,14 +120,14 @@ export const ThirtySixQuestions = () => {
             >
               <div className="absolute inset-0 bg-plum-950/60 rounded-2xl"></div>
               
-              <div className="relative z-30 bg-plum-800 border border-gold-400/30 p-8 rounded-xl shadow-2xl shadow-plum-900/50 max-w-sm w-full">
+              <div className="relative z-30 bg-plum-800 border border-gold-400/30 p-6 sm:p-8 rounded-xl shadow-2xl shadow-plum-900/50 max-w-[320px] sm:max-w-sm w-full mx-auto">
                 <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-500/20">
                   <Heart className="w-6 h-6 text-gold-300" />
                 </div>
                 
-                <h3 className="text-2xl font-serif text-gold-100 mb-3">The most beautiful truths are still ahead.</h3>
+                <h3 className="text-xl sm:text-2xl font-serif text-gold-100 mb-3">The most beautiful truths are still ahead.</h3>
                 
-                <p className="text-plum-200 text-sm mb-6 leading-relaxed">
+                <p className="text-plum-200 text-xs sm:text-sm mb-6 leading-relaxed">
                   Set 2 dives into the deeper truths that transform relationships. Unlock the rest of the 36 Questions and your permanent Memory Website by upgrading.
                 </p>
                 
@@ -143,23 +143,23 @@ export const ThirtySixQuestions = () => {
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex items-center justify-center gap-8 mt-12 w-full max-w-md">
+      <div className="flex items-center justify-center gap-4 sm:gap-8 mt-12 w-full max-w-md">
         <button 
           onClick={handlePrev}
           disabled={currentIndex === 0 || isPaywall}
-          className="p-3 text-plum-400 hover:text-gold-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-plum-400 hover:text-gold-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         >
           <ArrowLeft className="w-6 h-6" />
         </button>
         
-        <span className="text-plum-300 font-medium text-sm w-12 text-center">
+        <span className="text-plum-300 font-medium text-sm w-16 text-center">
           {currentIndex + 1} / 36
         </span>
         
         <button 
           onClick={handleNext}
           disabled={isPaywall}
-          className="p-3 text-plum-400 hover:text-gold-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-plum-400 hover:text-gold-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
         >
           <ArrowRight className="w-6 h-6" />
         </button>

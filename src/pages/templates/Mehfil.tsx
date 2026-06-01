@@ -37,7 +37,7 @@ export const Mehfil = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="A joyful, premium celebration template for milestones and birthdays." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-[#0F1C2E] text-[#E2E8F0] overflow-hidden font-sans">
+      <div className="relative min-h-screen bg-[#0F1C2E] text-[#E2E8F0] overflow-x-hidden font-sans">
         
         {/* Confetti / Jewel Tone Animation */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">

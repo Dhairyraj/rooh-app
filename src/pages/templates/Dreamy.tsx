@@ -32,7 +32,7 @@ export const Dreamy = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="A soft, ethereal, pastel dream template." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-[#F0F4FF] text-[#4A5568] overflow-hidden font-serif selection:bg-[#B7C6E6] selection:text-white">
+      <div className="relative min-h-screen bg-[#F0F4FF] text-[#4A5568] overflow-x-hidden font-serif selection:bg-[#B7C6E6] selection:text-white">
         
         {/* Soft Animated Gradients */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-50">

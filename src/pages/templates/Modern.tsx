@@ -32,7 +32,7 @@ export const Modern = ({ isDemo = false }: TemplateProps) => {
         <meta name="description" content="A minimalist, brutalist, high-fashion aesthetic digital memory website." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-white text-black overflow-hidden font-sans selection:bg-black selection:text-white">
+      <div className="relative min-h-screen bg-white text-black overflow-x-hidden font-sans selection:bg-black selection:text-white">
         
         {/* Paywall Overlay */}
         {!isUnlocked && (
