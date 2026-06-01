@@ -26,6 +26,7 @@ const DemoViewer = React.lazy(() => import('./pages/templates/DemoViewer').then(
 
 // Stub
 const CreateStub = React.lazy(() => import('./pages/CreateStub').then(m => ({ default: m.CreateStub })));
+const Custom = React.lazy(() => import('./pages/Custom').then(m => ({ default: m.Custom })));
 
 // Games
 const GamesHub = React.lazy(() => import('./pages/games/GamesHub').then(m => ({ default: m.GamesHub })));
@@ -77,6 +78,8 @@ function App() {
                 <Route path="/templates/dreamy" element={<Dreamy />} />
                 
                 <Route path="/demo/:templateId" element={<DemoViewer />} />
+                <Route path="/demo/custom/:templateId" element={<DemoViewer isCustom={true} />} />
+                <Route path="/custom" element={<Custom />} />
                 <Route path="/create" element={<CreateStub />} />
                 
                 {/* Games */}

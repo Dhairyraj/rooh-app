@@ -154,6 +154,48 @@ export const Gifts = () => {
               </div>
             </Card>
           </div>
+
+          <div className="mt-24 mb-12 text-center">
+            <h2 className="text-3xl md:text-5xl font-serif text-gold-100 mb-4">Custom Themes</h2>
+            <p className="text-plum-200">Bespoke universes tailored for your love story. (₹1499)</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Wizarding World */}
+            <Card className="p-6 bg-plum-900/50 border-plum-700 flex flex-col h-full hover:border-gold-500/50 transition-colors">
+              <div className="text-xs text-blue-400 uppercase tracking-widest font-bold mb-2">Magical</div>
+              <h3 className="text-2xl font-serif text-gold-50 mb-2">The Wizarding World</h3>
+              <p className="text-plum-300 text-sm mb-6 flex-grow">Deep navy, parchment, and floating magical particles.</p>
+              <div className="flex gap-2 mt-auto pt-4 border-t border-plum-800">
+                <Button className="flex-1 bg-gold-500/20 text-gold-200 hover:bg-gold-500 hover:text-plum-950 border-none transition-colors" onClick={() => window.open('/demo/custom/harry-potter', '_blank')}>Preview Demo</Button>
+                <Button className="flex-none bg-plum-800 text-gold-100 hover:bg-plum-700 border-none px-4" onClick={() => window.location.href = '/custom'}>₹1499</Button>
+              </div>
+            </Card>
+
+            {/* Central Perk */}
+            <Card className="p-6 bg-plum-900/50 border-plum-700 flex flex-col h-full hover:border-gold-500/50 transition-colors">
+              <div className="text-xs text-orange-400 uppercase tracking-widest font-bold mb-2">Cozy</div>
+              <h3 className="text-2xl font-serif text-gold-50 mb-2">Central Perk Edition</h3>
+              <p className="text-plum-300 text-sm mb-6 flex-grow">Warm orange, coffee vibes, and your own episodes.</p>
+              <div className="flex gap-2 mt-auto pt-4 border-t border-plum-800">
+                <Button className="flex-1 bg-gold-500/20 text-gold-200 hover:bg-gold-500 hover:text-plum-950 border-none transition-colors" onClick={() => window.open('/demo/custom/friends', '_blank')}>Preview Demo</Button>
+                <Button className="flex-none bg-plum-800 text-gold-100 hover:bg-plum-700 border-none px-4" onClick={() => window.location.href = '/custom'}>₹1499</Button>
+              </div>
+            </Card>
+
+            {/* Bollywood */}
+            <Card className="p-6 bg-plum-900/50 border-plum-700 flex flex-col h-full hover:border-gold-500/50 transition-colors">
+              <div className="text-xs text-red-400 uppercase tracking-widest font-bold mb-2">Cinematic</div>
+              <h3 className="text-2xl font-serif text-gold-50 mb-2">Bollywood Romance</h3>
+              <p className="text-plum-300 text-sm mb-6 flex-grow">Rich marigold, dramatic poster typography, and music.</p>
+              <div className="flex gap-2 mt-auto pt-4 border-t border-plum-800">
+                <Button className="flex-1 bg-gold-500/20 text-gold-200 hover:bg-gold-500 hover:text-plum-950 border-none transition-colors" onClick={() => window.open('/demo/custom/bollywood', '_blank')}>Preview Demo</Button>
+                <Button className="flex-none bg-plum-800 text-gold-100 hover:bg-plum-700 border-none px-4" onClick={() => window.location.href = '/custom'}>₹1499</Button>
+              </div>
+            </Card>
+
+          </div>
         </div>
       </div>
     </>

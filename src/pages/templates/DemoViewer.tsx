@@ -11,13 +11,18 @@ const templates = {
   mehfil: React.lazy(() => import('../templates/Mehfil').then(m => ({ default: m.Mehfil }))),
   eternal: React.lazy(() => import('../templates/Eternal').then(m => ({ default: m.Eternal }))),
   modern: React.lazy(() => import('../templates/Modern').then(m => ({ default: m.Modern }))),
-  dreamy: React.lazy(() => import('../templates/Dreamy').then(m => ({ default: m.Dreamy })))
+  dreamy: React.lazy(() => import('../templates/Dreamy').then(m => ({ default: m.Dreamy }))),
+  'custom-harry-potter': React.lazy(() => import('../templates/custom/HarryPotterDemo').then(m => ({ default: m.HarryPotterDemo }))),
+  'custom-friends': React.lazy(() => import('../templates/custom/FriendsDemo').then(m => ({ default: m.FriendsDemo }))),
+  'custom-bollywood': React.lazy(() => import('../templates/custom/BollywoodDemo').then(m => ({ default: m.BollywoodDemo })))
 };
 
-export const DemoViewer = () => {
+export const DemoViewer = ({ isCustom = false }: { isCustom?: boolean }) => {
   const { templateId } = useParams<{ templateId: string }>();
   const [isProcessing, setIsProcessing] = useState(false);
   const [success, setSuccess] = useState(false);
+  
+  const fullTemplateId = isCustom ? `custom-${templateId}` : templateId;
 
   const handleBuy = () => {
     setIsProcessing(true);
@@ -31,11 +36,11 @@ export const DemoViewer = () => {
     }, 1500);
   };
 
-  if (!templateId || !(templateId in templates)) {
+  if (!fullTemplateId || !(fullTemplateId in templates)) {
     return <div className="min-h-screen flex items-center justify-center bg-plum-950 text-gold-50">Template not found.</div>;
   }
 
-  const TemplateComponent = templates[templateId as keyof typeof templates];
+  const TemplateComponent = templates[fullTemplateId as keyof typeof templates];
 
   return (
     <div className="relative min-h-screen">
@@ -54,15 +59,30 @@ export const DemoViewer = () => {
         <div className="bg-plum-950/90 backdrop-blur-xl border border-gold-500/30 p-4 rounded-2xl shadow-[0_0_40px_rgba(212,175,55,0.15)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center text-gold-50">
             <Sparkles className="w-5 h-5 text-gold-400 mr-3 shrink-0" />
-            <span className="text-sm font-medium">✨ This is a live demo —<br className="sm:hidden"/> Personalise this for your story</span>
+            <span className="text-sm font-medium">
+              {isCustom ? (
+                <>✨ Want your own universe?<br className="sm:hidden"/> We'll craft it for you.</>
+              ) : (
+                <>✨ This is a live demo —<br className="sm:hidden"/> Personalise this for your story</>
+              )}
+            </span>
           </div>
-          <Button 
-            className="w-full sm:w-auto whitespace-nowrap bg-gradient-to-r from-gold-500 to-gold-400 text-plum-950 border-none animate-pulse hover:animate-none hover:scale-105 transition-transform shadow-lg shadow-gold-500/20"
-            onClick={handleBuy}
-            disabled={isProcessing || success}
-          >
-            {isProcessing ? 'Processing...' : success ? <><Check className="w-4 h-4 mr-2" /> Unlocked</> : 'Make It Mine — ₹299'}
-          </Button>
+          {isCustom ? (
+            <Button 
+              className="w-full sm:w-auto whitespace-nowrap bg-gradient-to-r from-gold-500 to-gold-400 text-plum-950 border-none animate-pulse hover:animate-none hover:scale-105 transition-transform shadow-lg shadow-gold-500/20"
+              onClick={() => window.location.href = '/custom'}
+            >
+              Request Your Theme — ₹1499
+            </Button>
+          ) : (
+            <Button 
+              className="w-full sm:w-auto whitespace-nowrap bg-gradient-to-r from-gold-500 to-gold-400 text-plum-950 border-none animate-pulse hover:animate-none hover:scale-105 transition-transform shadow-lg shadow-gold-500/20"
+              onClick={handleBuy}
+              disabled={isProcessing || success}
+            >
+              {isProcessing ? 'Processing...' : success ? <><Check className="w-4 h-4 mr-2" /> Unlocked</> : 'Make It Mine — ₹299'}
+            </Button>
+          )}
         </div>
       </motion.div>
 

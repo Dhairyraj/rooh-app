@@ -25,6 +25,7 @@ export const Navbar = () => {
   const navLinks = [
     { name: 'Games', path: '/play' },
     { name: 'Gifts', path: '/gifts' },
+    { name: 'Custom', path: '/custom' },
     { name: 'Pricing', path: '/pricing' },
     { name: 'Our Story', path: '/about' },
   ];

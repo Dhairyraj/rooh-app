@@ -10,6 +10,7 @@ import { GiftSection } from './home/GiftSection';
 import { FAQ } from './home/FAQ';
 import { FinalCTA } from './home/FinalCTA';
 import { TemplateShowcase } from './home/TemplateShowcase';
+import { CustomTeaser } from './home/CustomTeaser';
 import { CoupleGoalsFeed } from '../components/ui/CoupleGoalsFeed';
 import { RoohLetter } from '../components/ui/RoohLetter';
 
@@ -23,6 +24,7 @@ export default function Home() {
       <FeaturedGame />
       <GamesShowcase />
       <TemplateShowcase />
+      <CustomTeaser />
       <GiftSection />
       <PricingSection />
       <Testimonials />
