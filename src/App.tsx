@@ -28,6 +28,19 @@ const DemoViewer = React.lazy(() => import('./pages/templates/DemoViewer').then(
 const CreateStub = React.lazy(() => import('./pages/CreateStub').then(m => ({ default: m.CreateStub })));
 const Custom = React.lazy(() => import('./pages/Custom').then(m => ({ default: m.Custom })));
 
+// HIMYM Memory Pages
+const HimymLayout = React.lazy(() => import('./pages/himym/HimymLayout').then(m => ({ default: m.HimymLayout })));
+const HimymIntro = React.lazy(() => import('./pages/himym/HimymIntro').then(m => ({ default: m.HimymIntro })));
+const HimymNightWeMet = React.lazy(() => import('./pages/himym/HimymNightWeMet').then(m => ({ default: m.HimymNightWeMet })));
+const HimymGang = React.lazy(() => import('./pages/himym/HimymGang').then(m => ({ default: m.HimymGang })));
+const HimymYellowUmbrella = React.lazy(() => import('./pages/himym/HimymYellowUmbrella').then(m => ({ default: m.HimymYellowUmbrella })));
+const HimymSlapBet = React.lazy(() => import('./pages/himym/HimymSlapBet').then(m => ({ default: m.HimymSlapBet })));
+const HimymBlueFrenchHorn = React.lazy(() => import('./pages/himym/HimymBlueFrenchHorn').then(m => ({ default: m.HimymBlueFrenchHorn })));
+const HimymMarshallAndLily = React.lazy(() => import('./pages/himym/HimymMarshallAndLily').then(m => ({ default: m.HimymMarshallAndLily })));
+const HimymPlaybook = React.lazy(() => import('./pages/himym/HimymPlaybook').then(m => ({ default: m.HimymPlaybook })));
+const HimymCountdown = React.lazy(() => import('./pages/himym/HimymCountdown').then(m => ({ default: m.HimymCountdown })));
+const HimymHaveYouMet = React.lazy(() => import('./pages/himym/HimymHaveYouMet').then(m => ({ default: m.HimymHaveYouMet })));
+
 // Games
 const GamesHub = React.lazy(() => import('./pages/games/GamesHub').then(m => ({ default: m.GamesHub })));
 const ThirtySixQuestions = React.lazy(() => import('./pages/games/ThirtySixQuestions').then(m => ({ default: m.ThirtySixQuestions })));
@@ -81,6 +94,20 @@ function App() {
                 <Route path="/demo/custom/:templateId" element={<DemoViewer isCustom={true} />} />
                 <Route path="/custom" element={<Custom />} />
                 <Route path="/create" element={<CreateStub />} />
+
+                {/* HIMYM Custom Site */}
+                <Route path="/himym" element={<HimymLayout />}>
+                  <Route path="intro" element={<HimymIntro />} />
+                  <Route path="the-night-we-met" element={<HimymNightWeMet />} />
+                  <Route path="the-gang" element={<HimymGang />} />
+                  <Route path="yellow-umbrella" element={<HimymYellowUmbrella />} />
+                  <Route path="slap-bet" element={<HimymSlapBet />} />
+                  <Route path="blue-french-horn" element={<HimymBlueFrenchHorn />} />
+                  <Route path="marshall-and-lily" element={<HimymMarshallAndLily />} />
+                  <Route path="the-playbook" element={<HimymPlaybook />} />
+                  <Route path="countdown" element={<HimymCountdown />} />
+                  <Route path="have-you-met" element={<HimymHaveYouMet />} />
+                </Route>
                 
                 {/* Games */}
                 <Route path="/play" element={<GamesHub />} />

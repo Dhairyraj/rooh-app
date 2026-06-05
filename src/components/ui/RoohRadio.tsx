@@ -1,10 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { Music, Play, Pause, X, SlidersHorizontal } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 type Mood = 'Romantic' | 'Nostalgic' | 'Playful' | 'Dreamy';
 
 export const RoohRadio = () => {
+  const location = useLocation();
+  
+  if (location.pathname.startsWith('/himym')) {
+    return null;
+  }
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentMood, setCurrentMood] = useState<Mood>('Romantic');

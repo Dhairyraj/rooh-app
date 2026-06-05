@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Footer = () => {
+  const location = useLocation();
+  if (location.pathname.startsWith('/himym')) {
+    return null;
+  }
   return (
     <footer className="bg-plum-900 border-t border-plum-800 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
